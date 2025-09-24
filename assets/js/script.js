@@ -2,6 +2,7 @@ const billInput = document.getElementById("bill-total");
 const peopleInput = document.getElementById("bill-people");
 const customTipInput = document.getElementById("custom-tip-input");
 const customTipRadio = document.getElementById("tip-percent-custom");
+const radioInputs = document.querySelectorAll('input[name="tip-option"]');
 
 const resetBtn = document.querySelector(".btn-reset");
 
@@ -64,9 +65,9 @@ function handleErrors(billTotal, totalPeople) {
 function resetForm() {
   billInput.value = "";
   peopleInput.value = "";
-  document.querySelector(
-    'input[name="tip-option"][value="0.15"]'
-  ).checked = true;
+  radioInputs.forEach((radio) => {
+    radio.checked = false;
+  });
   handleCustomTipSelection();
 
   calculateSplits();
@@ -161,7 +162,7 @@ billInput.addEventListener("input", calculateSplits);
 peopleInput.addEventListener("input", calculateSplits);
 customTipInput.addEventListener("input", calculateSplits);
 
-document.querySelectorAll('input[name="tip-option"]').forEach((option) => {
+radioInputs.forEach((option) => {
   option.addEventListener("change", () => {
     handleCustomTipSelection();
     calculateSplits();
