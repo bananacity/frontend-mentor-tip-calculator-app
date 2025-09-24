@@ -17,9 +17,10 @@ function calculateSplits() {
   const billTotal = Number(removeCommas(billInput.value) || 0);
   const totalPeople = Number(removeCommas(peopleInput.value) || 0);
 
-  const selectedTip = document.querySelector(
+  const checkedRadio = document.querySelector(
     'input[name="tip-option"]:checked'
-  ).value;
+  );
+  const selectedTip = checkedRadio ? checkedRadio.value : 0;
 
   let tipAmount = 0.0;
 
