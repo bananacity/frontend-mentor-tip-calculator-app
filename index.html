@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Splitter - Split tips with friends</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=League+Spartan:wght@100..900&family=Outfit:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/general.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <main>
+      <img
+        src="/assets/images/logo.svg"
+        alt="Splitter logo"
+        class="logo"
+        draggable="false"
+      />
+
+      <article class="main-container">
+        <div class="bill-container">
+          <div class="form-group" id="bill-input-container">
+            <div class="text-preset-5 input-header">
+              <label for="bill-total" class="text-preset-5 input-label">
+                Bill
+              </label>
+
+              <p class="error-message">Can't be zero</p>
+            </div>
+
+            <div class="input-with-icon">
+              <img
+                src="assets/images/icon-dollar.svg"
+                alt=""
+                draggable="false"
+              />
+              <input
+                type="text"
+                class="num-input bill-input text-preset-3"
+                id="bill-total"
+                placeholder="0.00"
+                inputmode="decimal"
+                required
+              />
+            </div>
+          </div>
+
+          <fieldset class="tip-options-form-group" id="tip-options">
+            <legend class="text-preset-5 input-label">Select Tip %</legend>
+
+            <div class="tip-options-container">
+              <div class="tip-option">
+                <input
+                  type="radio"
+                  id="tip-percent-5"
+                  name="tip-option"
+                  value="0.05"
+                />
+                <label for="tip-percent-5" class="text-preset-3">5%</label>
+              </div>
+
+              <div class="tip-option">
+                <input
+                  type="radio"
+                  id="tip-percent-10"
+                  name="tip-option"
+                  value="0.1"
+                />
+                <label for="tip-percent-10" class="text-preset-3">10%</label>
+              </div>
+
+              <div class="tip-option">
+                <input
+                  type="radio"
+                  id="tip-percent-15"
+                  name="tip-option"
+                  value="0.15"
+                  checked
+                />
+                <label for="tip-percent-15" class="text-preset-3">15%</label>
+              </div>
+
+              <div class="tip-option">
+                <input
+                  type="radio"
+                  id="tip-percent-25"
+                  name="tip-option"
+                  value="0.25"
+                />
+                <label for="tip-percent-25" class="text-preset-3">25%</label>
+              </div>
+
+              <div class="tip-option">
+                <input
+                  type="radio"
+                  id="tip-percent-50"
+                  name="tip-option"
+                  value="0.5"
+                />
+                <label for="tip-percent-50" class="text-preset-3">50%</label>
+              </div>
+
+              <div class="tip-option tip-option-custom">
+                <input
+                  type="radio"
+                  id="tip-percent-custom"
+                  name="tip-option"
+                  value="custom"
+                />
+                <input
+                  type="text"
+                  class="custom-input text-preset-3"
+                  id="custom-tip-input"
+                  placeholder="0%"
+                />
+                <label for="tip-percent-custom" class="text-preset-3">
+                  Custom
+                </label>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="form-group" id="people-input-container">
+            <div class="text-preset-5 input-header">
+              <label for="bill-people" class="input-label">
+                Number of People
+              </label>
+
+              <p class="error-message">Can't be zero</p>
+            </div>
+
+            <div class="input-with-icon">
+              <img
+                src="assets/images/icon-person.svg"
+                alt=""
+                draggable="false"
+              />
+              <input
+                type="text"
+                class="num-input people-input text-preset-3"
+                id="bill-people"
+                placeholder="0"
+                inputmode="decimal"
+                required
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="results-container">
+          <div class="results-header">
+            <div class="result-container">
+              <div>
+                <p class="result-title text-preset-5">Tip Amount</p>
+                <p class="result-text text-preset-6">/ person</p>
+              </div>
+
+              <p class="result-amount text-preset-1">
+                $<span id="tip-per-person">0.00</span>
+              </p>
+            </div>
+
+            <div class="result-container">
+              <div>
+                <p class="result-title text-preset-5">Total</p>
+                <p class="result-text text-preset-6">/ person</p>
+              </div>
+
+              <p class="result-amount text-preset-1">
+                $<span id="total-per-person">0.00</span>
+              </p>
+            </div>
+          </div>
+
+          <button class="btn-reset text-preset-4">Reset</button>
+        </div>
+      </article>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
