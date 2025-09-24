@@ -96,7 +96,8 @@ main {
   pointer-events: none;
 }
 
-.tip-option-custom input[type="radio"] {
+.tip-option-custom input[type="radio"],
+.tip-option-custom input[type="radio"]:hover {
   background-color: var(--color-grey-50);
 }
 
@@ -104,7 +105,7 @@ main {
   background-color: var(--color-green-400);
 }
 
-.tip-option-custom input[type="radio"] + label {
+.tip-option-custom label {
   color: var(--color-grey-550);
 }
 
@@ -115,20 +116,21 @@ main {
 .custom-input {
   border: none;
   position: absolute;
+  text-align: center;
   height: 100%;
   width: 100%;
   left: 0;
   top: 0;
   border-radius: 0.3125rem;
-  text-align: center;
   pointer-events: none;
   display: none;
-  background-color: var(--color-green-400);
+  background-color: var(--color-grey-50);
   color: var(--color-green-900);
+  outline: 2px solid var(--color-green-400);
 }
 
 .custom-input::placeholder {
-  color: var(--color-green-900);
+  color: var(--color-green-550);
   opacity: 50%;
 }
 
